@@ -6,7 +6,5 @@ multiples_of_5 =  5.multiples(1..999)
 
 unique_multiples = multiples_of_3 | multiples_of_5
 
-sum = unique_multiples.sum
-
-puts "The answer is #{sum}"
+puts "The answer is #{unique_multiples.sum}"
     
