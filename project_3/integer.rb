@@ -27,10 +27,7 @@ class Integer
     return false if (self == 0) 
     return false if (self == 1) 
     return true  if (self == 2)
-
-    # for (var i=2;i<num;i++) do
-    #       return false if self % i == 0
-    #     end
+    
     any_composites = (2..self-1).any? { |num| self % num == 0 }
     
     return !any_composites

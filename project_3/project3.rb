@@ -1,10 +1,14 @@
 require 'integer'
 
-600851475143.downto(1).each do |prime_canidate|
-  if prime_canidate.prime?
-    
+#NUM = 13195
+NUM = 600851475143
+NUM.factors(:order => :desc) do |factor|
+  if factor.prime?
+    puts "The largest prime factor of #{NUM} is: #{factor}"
+    break
   end
 end
+
 #primes = 600851475143.primes
 #factors = 600851475143.factors
 #prime_factors = primes & factors
