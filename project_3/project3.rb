@@ -16,18 +16,37 @@ require 'integer'
 
 
 
-def find_largest_factor(n)
-  i = 2; 
-  while(i <= Math.sqrt(n).floor())
-    if (n % i == 0)
-      return (n/i)
-    end
-    i+=1
+# def find_largest_factor(n)
+#   i = 2; 
+#   while(i <= Math.sqrt(n).floor())
+#     if (n % i == 0)
+#       return (n/i)
+#     end
+#     i+=1
+#   end
+#   return nil
+# end
+# old_val = find_largest_factor(600851475143)
+# while(new_val = find_largest_factor(old_val))
+#   old_val = new_val
+# end
+# puts old_val
+# 
+
+def largest_factor(n)
+  for k in (2..(Math.sqrt(n)).floor)  
+    return (n/k) if n % k == 0
   end
-  return n
-end
-num = find_largest_factor(600851475143)
-while( !num.prime?)
-  num = find_largest_factor(num)
-end
-puts num
+  nil
+end            
+
+def largest_prime_factor(n)
+  while(true)
+    m = largest_factor(n)
+    return n if m.nil?
+    n = m        
+  end
+end            
+
+puts largest_prime_factor(600851475143)
+
