@@ -1,7 +1,14 @@
-def pallindromes
-  1.upto(999) do |num|
-    if num.to_s = num.to_s.reverse
-      puts num
-    end
+require 'core_ext'
+
+palindromes = []
+
+999.downto(500) do |left|
+  999.downto(500) do |right|
+    product = left * right
+    palindromes << product if product.to_s.palindrome?
   end
 end
+
+largest = palindromes.sort.last
+
+puts largest
